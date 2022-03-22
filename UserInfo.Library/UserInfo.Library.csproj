@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+	  <LangVersion>latest</LangVersion>
+	  <Nullable>enable</Nullable>
+	  <Version>1.1.0</Version>
+	  <Authors>Morten Meisler</Authors>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <Description>Contains models and services for retrieving azure ad user info via Microsoft Graph.</Description>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Azure.Identity" Version="1.5.0" />
+		<PackageReference Include="LazyCache.AspNetCore" Version="2.4.0" />
+		<PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.6.2" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Graph" Version="4.21.0" />
+		<PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="2.19.6" />
+		<PackageReference Include="Polly" Version="7.2.3" />
+	</ItemGroup>
+</Project>
