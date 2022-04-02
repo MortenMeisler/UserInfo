@@ -23,6 +23,7 @@ namespace UserInfo.Library.Services
         /// </summary>
         /// <param name="authenticationProvider">the authentication provider.</param>
         /// <param name="cache">the cache.</param>
+        /// <param name="options">the options.</param>
         public MemoryCachedUserInfoService(IAuthenticationProvider authenticationProvider, IAppCache cache, UserInfoOptions options)
         {
             Guard.AgainstNull(cache, nameof(cache));

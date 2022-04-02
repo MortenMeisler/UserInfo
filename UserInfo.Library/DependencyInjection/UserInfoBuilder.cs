@@ -5,8 +5,6 @@ namespace UserInfo.Library.DependencyInjection
 {
     internal class UserInfoBuilder : IUserInfoBuilder
     {
-        private UserInfoOptions? _userInfoOptions;
-
         /// <summary>
         /// Initializes a new <see cref="UserInfoBuilder"/> instance.
         /// </summary>

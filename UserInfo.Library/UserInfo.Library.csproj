@@ -8,6 +8,7 @@
 	  <Authors>Morten Meisler</Authors>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <Description>Contains models and services for retrieving azure ad user info via Microsoft Graph.</Description>
   </PropertyGroup>
 	<ItemGroup>
