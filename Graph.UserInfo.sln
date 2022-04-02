@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32314.265
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graph.UserInfo.Library", "UserInfo.Library\Graph.UserInfo.Library.csproj", "{63544AB0-D9AC-4758-AE38-7251D2B81088}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graph.UserInfo.Library", "Graph.UserInfo.Library\Graph.UserInfo.Library.csproj", "{63544AB0-D9AC-4758-AE38-7251D2B81088}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graph.UserInfo.WebSample", "UserInfo.WebSample\Graph.UserInfo.WebSample.csproj", "{5E16CC31-70EF-4DCA-802E-80ED844F3551}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graph.UserInfo.WebSample", "Graph.UserInfo.WebSample\Graph.UserInfo.WebSample.csproj", "{5E16CC31-70EF-4DCA-802E-80ED844F3551}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

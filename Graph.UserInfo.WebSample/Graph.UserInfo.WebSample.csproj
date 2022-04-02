@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UserInfo.Library\Graph.UserInfo.Library.csproj" />
+    <ProjectReference Include="..\Graph.UserInfo.Library\Graph.UserInfo.Library.csproj" />
   </ItemGroup>
 
 </Project>
