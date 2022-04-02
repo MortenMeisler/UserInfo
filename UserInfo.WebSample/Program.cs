@@ -1,3 +1,4 @@
+using Azure.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Graph;
@@ -24,26 +25,56 @@ builder.Services.AddRazorPages()
     .AddMvcOptions(options => { })
     .AddMicrosoftIdentityUI();
 
+// ******** Option 1: The most simple setup using Azure Managed Identity and passing Configuration as argument. ********
+// Make sure appsettings or web.config contains a section called UserInfo with minimum tenantId for testng locally.
+builder.Services.AddUserInfoService(builder.Configuration)
+    .WithManagedIdentity();
 
-var options = new UserInfoOptions();
-builder.Configuration.GetSection(UserInfoOptions.UserInfo).Bind(options);
+// ******** Option 2: Bind the option class and configure the options needed. ********
+
+//var options = new UserInfoOptions();
+//builder.Configuration.GetSection(UserInfoOptions.UserInfo).Bind(options);
+
+//builder.Services.AddUserInfoService(config
+//    =>
+//{
+//    config.Caching = options.Caching; // default true if not set.
+//    config.TenantId = options.TenantId; // Only required when testing localhost and using Azure Managed Identity.
+//})
+//    .WithManagedIdentity();
+
+// ******** Option 3: Client Credentials. This needs a few more setup options.********
 
 //builder.Services.AddUserInfoService(config
 //    =>
 //{
 //    config.Caching = options.Caching;
-//    config.TenantId = options.TenantId; // Only required when testing localhost and using Azure Managed Identity.
+//    config.TenantId = options.TenantId;
 //    config.ClientId = options.ClientId;
 //    config.ClientSecret = options.ClientSecret;
 //    config.Domain = options.Domain;
 //})
 //    .WithClientCredentials();
 
-builder.Services.AddUserInfoService()
-    .WithClientCredentials();
+// ******** Option 4: Provide your own auth provider (or perhaps one from MSAL). ********
+//var credential = new ChainedTokenCredential(
+//        new ManagedIdentityCredential(),
+//        new EnvironmentCredential());
+//var token = credential.GetToken(
+//    new Azure.Core.TokenRequestContext(
+//        new[] { "https://graph.microsoft.com/.default" }));
+//var accessToken = token.Token;
+//var provider = new DelegateAuthenticationProvider((requestMessage) =>
+//{
+//    requestMessage
+//    .Headers
+//    .Authorization = new AuthenticationHeaderValue("bearer", accessToken);
 
-//builder.Services.AddUserInfoService()
-//    .WithAzureManagedIdentity();
+//    return Task.CompletedTask;
+//});
+
+//builder.Services.AddUserInfoService(builder.Configuration)
+//    .WithAuthenticationProvider(provider);
 
 
 var app = builder.Build();
