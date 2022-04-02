@@ -9,7 +9,7 @@ namespace UserInfo.Library.Services
     /// <summary>
     /// Base class for invoking actions. Handles retries and exceptions.
     /// </summary>
-    public abstract class BaseUserInfoService
+    internal abstract class BaseUserInfoService
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseUserInfoService"/> class.

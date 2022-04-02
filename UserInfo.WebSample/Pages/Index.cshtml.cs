@@ -15,9 +15,12 @@ namespace UserInfo.WebSample.Pages
             _userService = userService;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-
+            // Arya Stark
+            ViewData["username"] = await _userService.GetUserNameByObjectId("03c0532c-3a9b-4875-8c15-5930e0394eb6");
+            
+            ViewData["user"] = await _userService.GetUserByObjectId("03c0532c-3a9b-4875-8c15-5930e0394eb6");
         }
     }
 }

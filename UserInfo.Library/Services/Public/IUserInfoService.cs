@@ -46,7 +46,7 @@ namespace UserInfo.Library.Services
         /// </summary>
         /// <param name="objectIds">list of objectIds.</param>
         /// <param name="ct">The cancellation token.</param>
-        /// <returns>A <see cref="Dictionary{String, String}" /> of objectId and UserName.</returns>
+        /// <returns>A <see cref="IDictionary{String, String}" /> of objectId and UserName.</returns>
         Task<IDictionary<string, string>> GetUserNamesByObjectIds(IList<string> objectIds, CancellationToken ct = default);
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace UserInfo.Library.Services
         /// <see href="https://docs.microsoft.com/en-us/graph/query-parameters#filter-parameter">Check filter documentation here.</see>.
         /// </summary>
         /// <example>
-        /// filterString = "startswith(displayName, 'Conf')"
+        /// filterString = "startswith(displayName, 'Morten')"
         /// filterString = "jobTitle eq 'Assassin'".
         /// </example>
         /// <param name="filterString">The filter string.</param>

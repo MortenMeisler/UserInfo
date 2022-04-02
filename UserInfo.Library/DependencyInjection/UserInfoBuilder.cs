@@ -1,9 +1,5 @@
-﻿using LazyCache;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace UserInfo.Library.DependencyInjection
 {

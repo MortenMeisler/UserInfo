@@ -1,10 +1,10 @@
 ﻿using LazyCache;
 using Microsoft.Graph;
-using UserInfo.Library.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using UserInfo.Library.Models;
 
 namespace UserInfo.Library.Services
 {
@@ -12,7 +12,7 @@ namespace UserInfo.Library.Services
     /// Service for retrieving user info memory cached.
     /// </summary>
     /// <seealso cref="MemoryCachedUserInfoService" />
-    public class MemoryCachedUserInfoService : IUserInfoService
+    internal class MemoryCachedUserInfoService : IUserInfoService
     {
         private readonly IUserInfoService _userInfoService;
         private readonly IAppCache _cache;
@@ -26,7 +26,7 @@ namespace UserInfo.Library.Services
         public MemoryCachedUserInfoService(IAuthenticationProvider authenticationProvider, IAppCache cache, UserInfoOptions options)
         {
             Guard.AgainstNull(cache, nameof(cache));
-            
+
             _cache = cache;
             _options = options;
             _userInfoService = new UserInfoService(authenticationProvider);

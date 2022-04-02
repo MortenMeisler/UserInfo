@@ -11,7 +11,7 @@ namespace UserInfo.Library.Services
     /// Service for retrieving user info.
     /// </summary>
     /// <seealso cref="UserInfoService" />
-    public class UserInfoService : BaseUserInfoService, IUserInfoService
+    internal class UserInfoService : BaseUserInfoService, IUserInfoService
     {
         private readonly GraphUserService _graphUserService;
 

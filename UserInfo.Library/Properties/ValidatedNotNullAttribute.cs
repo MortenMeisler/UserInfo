@@ -9,7 +9,7 @@ namespace UserInfo.Library
     /// <!-- Inspiration: https://github.com/ardalis/GuardClauses/blob/master/src/GuardClauses/GuardClauseExtensions.cs -->
     [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
     [ExcludeFromCodeCoverage]
-    public sealed class ValidatedNotNullAttribute : Attribute
+    internal sealed class ValidatedNotNullAttribute : Attribute
     {
     }
 }

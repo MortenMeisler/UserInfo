@@ -1,5 +1,5 @@
-﻿using Microsoft.Azure.Services.AppAuthentication;
-using Microsoft.Graph;
+﻿using Microsoft.Graph;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -10,13 +10,13 @@ namespace UserInfo.Providers
     /// <summary>
     /// Authentication provider for Azure Managed Identity.
     /// </summary>
-    internal class ManagedIdentityAuthenticationProvider : IAuthenticationProvider
+    internal class ClientCredentialsAuthenticationProvider : IAuthenticationProvider
     {
         private readonly UserInfoOptions _options;
         /// <summary>
         /// Initializes a new instance of the <see cref="ManagedIdentityAuthenticationProvider"/> class.
         /// </summary>
-        public ManagedIdentityAuthenticationProvider(UserInfoOptions options)
+        internal ClientCredentialsAuthenticationProvider(UserInfoOptions options)
         {
             _options = options;
         }
@@ -28,11 +28,11 @@ namespace UserInfo.Providers
         /// <returns>A Task (as this is an async method).</returns>
         public async Task AuthenticateRequestAsync(HttpRequestMessage request)
         {
-            var azureServiceTokenProvider = new AzureServiceTokenProvider();
-            string token = await azureServiceTokenProvider
-                .GetAccessTokenAsync(UserInfoOptions.GraphUrl, _options.TenantId);
+            var credentials = new ClientCredential(_options.ClientId, _options.ClientSecret);
+            var authContext = new AuthenticationContext($"https://login.microsoftonline.com/{_options.Domain}/");
+            var token = await authContext.AcquireTokenAsync(UserInfoOptions.GraphUrl, credentials);
 
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token.AccessToken);
         }
     }
 }

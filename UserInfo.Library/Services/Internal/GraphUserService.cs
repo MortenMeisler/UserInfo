@@ -1,11 +1,11 @@
 ﻿using Microsoft.Graph;
-using UserInfo.Library.Extensions;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using UserInfo.Library.Extensions;
 using UserInfo.Library.Models;
 
 namespace UserInfo.Library.Services

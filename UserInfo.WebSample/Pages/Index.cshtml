@@ -2,9 +2,14 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    var user = ViewData["user"] as UserInfo.Library.Models.UserSimple;
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+     <p>User UserName: @ViewData["username"]</p>
+     <p>User Full Name: @user?.DisplayName</p>
+     <p>User Email: @user?.UserPrincipalName</p>
+     <p>User ObjectId: @user?.ObjectId</p>
 </div>
