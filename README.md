@@ -1,7 +1,7 @@
 # Graph User Info Service
 
 ## Introduction 
-This is a simple Microsoft Graph wrapper for retrieving Azure AD Users using the most optimal approach in terms of filtering, batching and caching.
+This is a light-weight Microsoft Graph wrapper for simple retrieving Azure AD Users using the most optimal approach in terms of filtering, batching and caching.
 
 A common scenario is when we only have the user objectId (perhaps retrieved from authorization context) set as createdByUser or modifiedByUser - and now we need to translate that into a full name, email and/or username.
 
