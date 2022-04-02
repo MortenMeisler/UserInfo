@@ -18,7 +18,7 @@ For setting up Managed Identity for your web app and grant it the right Microsof
 
 appsettings setup:
 
-```
+```csharp
 // ** Minimum setup for running locally using Managed Identity. ** //
   "UserInfo": {
     "TenantId": "22222222-2222-2222-2222-222222222222" // only needed when testing locally.
@@ -28,7 +28,7 @@ Check web app sample for more setup options.
 
 Program.cs (or Startup.cs):
 
-```
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     // ...
@@ -50,7 +50,7 @@ Currently there is no expiration on the caching since objectIds and usernames wi
 Check WebAppSample app for different uses and setup.
 
 Example:
-```
+```csharp
 private readonly IUserInfoService _userService;
 
 public SomeService(IUserInfoService userService)
