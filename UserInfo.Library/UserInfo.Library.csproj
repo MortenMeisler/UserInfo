@@ -4,12 +4,13 @@
 	  <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
 	  <LangVersion>latest</LangVersion>
 	  <Nullable>enable</Nullable>
-	  <Version>1.1.2</Version>
+	  <Version>1.0.0</Version>
 	  <Authors>Morten Meisler</Authors>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
-	  <Description>Contains models and services for retrieving azure ad user info via Microsoft Graph.</Description>
+	  <PackageId>Graph.UserInfo</PackageId>
+	  <Description>Light-weight Graph Service wrapper for simple retrieving Azure AD users via Microsoft Graph.</Description>
   </PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Azure.Identity" Version="1.5.0" />
