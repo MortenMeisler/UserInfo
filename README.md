@@ -1,7 +1,7 @@
 # Graph User Info Service
 
 ## Introduction 
-This is a light-weight Microsoft Graph wrapper for simple retrieving Azure AD Users using the most optimal approach in terms of filtering, batching and caching.
+This is a light-weight Microsoft Graph wrapper for simple retrieving of Azure AD Users using the most optimal approach in terms of filtering, batching and caching.
 
 A common scenario is when we only have the user objectId (perhaps retrieved from authorization context) set as createdByUser or modifiedByUser - and now we need to translate that into a full name, email and/or username.
 
@@ -10,7 +10,7 @@ NuGet package: https://www.nuget.org/packages/Graph.UserInfo/
 
 Graph UserInfo uses Microsoft Graph underneath. This requires that App Registration in Azure has permissions to read user information in AAD.
 
-Make sure your App has at least the following API Permissions:
+Make sure your Service Principal related to the app has at least the following API Permissions:
  - API: Microsoft Graph
  - Name / Scope: User.Read.All
  - Type: Application
