@@ -11,7 +11,7 @@
 	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <PackageId>Graph.UserInfo</PackageId>
-	  <Description>Light-weight Graph Service wrapper for simple retrieving Azure AD users via Microsoft Graph.</Description>
+	  <Description>This is a light-weight Microsoft Graph wrapper for simple retrieving Azure AD Users using the most optimal approach in terms of filtering, batching and caching.</Description>
 	  <UserSecretsId>1ce1ea5a-9286-411a-b225-7f312f5cd31a</UserSecretsId>
   </PropertyGroup>
 	<ItemGroup>
