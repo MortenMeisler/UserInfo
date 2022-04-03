@@ -15,7 +15,7 @@ jobs:
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'dependabot')
         uses: lots0logs/gh-action-get-changed-files@2.1.4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_TOKEN }}
 
       - name: Check modified files
         id: check_modified
@@ -45,5 +45,5 @@ jobs:
         if: ${{ !steps.check_modified.outputs.version_modified && github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'dependabot') }}
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.REPO_TOKEN }}
           branch: ${{ github.head_ref }}
