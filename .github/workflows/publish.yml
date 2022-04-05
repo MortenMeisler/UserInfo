@@ -23,7 +23,7 @@ jobs:
       - name: Bump versions
         uses: KageKirin/bump-csproj-version@v0.0.1
         with:
-            file: 'Graph.UserInfo.Library.csproj'
+            file: 'Graph.UserInfo.Library/Graph.UserInfo.Library.csproj'
       # Publish
       - name: publish on version change
         id: publish_nuget
