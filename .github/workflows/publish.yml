@@ -9,7 +9,7 @@ on:
 jobs:
   publish:
     name: build, pack & publish
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
         run: dotnet restore
