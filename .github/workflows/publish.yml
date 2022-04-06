@@ -11,8 +11,6 @@ jobs:
     name: build, pack & publish
     runs-on: ubuntu-latest
     steps:
-      - name: Install dependencies
-        run: dotnet restore
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Bump versions
