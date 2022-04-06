@@ -11,6 +11,8 @@ jobs:
     name: build, pack & publish
     runs-on: ubuntu-latest
     steps:
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
       - name: Bump versions
         uses: KageKirin/bump-csproj-version@v0.0.1
         with:
