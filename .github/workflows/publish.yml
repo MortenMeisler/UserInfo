@@ -24,7 +24,7 @@ jobs:
         uses: SiqiLu/dotnet-bump-version@1.0.2
         with:
             github_token: ${{ secrets.REPO_TOKEN }}
-            version_files: "Graph.UserInfo.Library/Graph.UserInfo.Library.csproj"
+            version_file: "Graph.UserInfo.Library/Graph.UserInfo.Library.csproj"
       # Publish
       - name: publish on version change
         id: publish_nuget
