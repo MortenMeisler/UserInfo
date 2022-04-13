@@ -21,8 +21,9 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Bump versions
-        uses: KageKirin/bump-csproj-version@v0.0.1
+        uses: SiqiLu/dotnet-bump-version@1.0.2
         with:
+            github_token: ${{ secrets.REPO_TOKEN }}
             file: 'Graph.UserInfo.Library/Graph.UserInfo.Library.csproj'
             patch: true
       # Publish
