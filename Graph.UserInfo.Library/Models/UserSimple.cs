@@ -4,7 +4,7 @@ using UserInfo.Library.Extensions;
 namespace UserInfo.Library.Models
 {
     /// <summary>
-    /// User model with essential info.
+    /// User model with config info.
     /// </summary>
     public class UserSimple
     {
