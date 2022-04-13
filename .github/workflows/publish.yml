@@ -21,10 +21,10 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Bump versions
-        uses: SiqiLu/dotnet-bump-version@1.0.2
+        uses: SiqiLu/dotnet-bump-version@master
         with:
             github_token: ${{ secrets.REPO_TOKEN }}
-            version_file: "Graph.UserInfo.Library/Graph.UserInfo.Library.csproj"
+            version_file: Graph.UserInfo.Library/Graph.UserInfo.Library.csproj
       # Publish
       - name: publish on version change
         id: publish_nuget
