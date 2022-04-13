@@ -37,7 +37,7 @@
         public string? TenantId { get; set; }
 
         /// <summary>
-        /// ClientId (AppId) of the Azure App when using Client Credentials provider.
+        /// Client Id (AppId) of the Azure App when using Client Credentials provider.
         /// </summary>
         public string? ClientId { get; set; }
 
