@@ -21,7 +21,7 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
       - name: Bump versions
-        uses: SiqiLu/dotnet-bump-version@master
+        uses: MortenMeisler/dotnet-bump-version@master
         with:
             github_token: ${{ secrets.REPO_TOKEN }}
             version_files: "*/Graph.UserInfo.Library.csproj"
