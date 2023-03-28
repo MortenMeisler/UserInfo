@@ -1,7 +1,14 @@
-﻿using Microsoft.Azure.Services.AppAuthentication;
+﻿using Azure.Core;
+using Azure.Identity;
 using Microsoft.Graph;
+using Microsoft.Identity.Client;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
+using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using System.Threading.Tasks;
 using UserInfo.Library;
 
@@ -24,15 +31,19 @@ namespace UserInfo.Providers
         /// <summary>
         /// Adds an authorization header to an HttpRequestMessage.
         /// </summary>
-        /// <param name="request">HttpRequest message to authenticate.</param>
-        /// <returns>A Task (as this is an async method).</returns>
-        public async Task AuthenticateRequestAsync(HttpRequestMessage request)
-        {
-            var azureServiceTokenProvider = new AzureServiceTokenProvider();
-            string token = await azureServiceTokenProvider
-                .GetAccessTokenAsync(UserInfoOptions.GraphUrl, _options.TenantId);
+        /// <param name="request">The request.</param>
+        /// <param name="additionalAuthenticationContext">Additional authentication context.</param>
+        /// <param name="cancellationToken">The cancelletationToken.</param>
+        /// <returns></returns>
 
-            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
+        public async Task AuthenticateRequestAsync(RequestInformation request, Dictionary<string, object>? additionalAuthenticationContext = null, CancellationToken cancellationToken = default)
+        {
+            var azureServiceTokenProvider = new DefaultAzureCredential();
+            var tokenRequestContext = new TokenRequestContext(scopes: new string[] { UserInfoOptions.GraphUrl + ".default" }, tenantId: _options.TenantId) { };
+            var token = await azureServiceTokenProvider
+                .GetTokenAsync(tokenRequestContext);
+
+            request.Headers.Add(HttpRequestHeader.Authorization.ToString(), new string[] { $"Bearer {token.Token}" });
         }
     }
 }

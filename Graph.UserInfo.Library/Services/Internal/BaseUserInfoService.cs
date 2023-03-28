@@ -30,11 +30,11 @@ namespace UserInfo.Library.Services
             {
                 return await task.Invoke().ConfigureAwait(false);
             }
-            catch (ServiceException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+            catch (ServiceException ex) when (ex.ResponseStatusCode == (int)HttpStatusCode.NotFound)
             {
                 return default;
             }
-            catch (ServiceException ex) when (ex.StatusCode == (HttpStatusCode)429)
+            catch (ServiceException ex) when (ex.ResponseStatusCode == (int)(HttpStatusCode)429)
             {
                 var completed = false;
 

@@ -1,13 +1,8 @@
 using Azure.Identity;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Graph;
 using Microsoft.Identity.Web;
-using Microsoft.Identity.Web.TokenCacheProviders.InMemory;
 using Microsoft.Identity.Web.UI;
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
-using System.Net.Http.Headers;
-using UserInfo.Library;
 using UserInfo.Library.DependencyInjection;
 
 var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);

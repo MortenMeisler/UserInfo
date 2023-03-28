@@ -1,4 +1,4 @@
-﻿using Microsoft.Graph;
+﻿using Microsoft.Graph.Models;
 using UserInfo.Library.Extensions;
 
 namespace UserInfo.Library.Models

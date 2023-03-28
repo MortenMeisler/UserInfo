@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Graph;
+using Microsoft.Kiota.Abstractions.Authentication;
 using System;
 using System.Linq;
 using UserInfo.Library.Services;
