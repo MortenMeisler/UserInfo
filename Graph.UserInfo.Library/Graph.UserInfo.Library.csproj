@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+	  <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
 	  <LangVersion>latest</LangVersion>
 	  <Nullable>enable</Nullable>
-	  <Version>1.0.43</Version>
+	  <Version>1.1.0</Version>
 	  <Authors>Morten Meisler</Authors>
 	  <PackageProjectUrl>https://github.com/MortenMeisler/UserInfo</PackageProjectUrl>
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
