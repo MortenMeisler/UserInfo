@@ -20,6 +20,6 @@
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Graph" Version="5.30.0" />
 		<PackageReference Include="Microsoft.Identity.Client.Extensions.Msal" Version="4.57.0" />
-		<PackageReference Include="Polly" Version="8.0.0" />
+		<PackageReference Include="Polly" Version="8.1.0" />
 	</ItemGroup>
 </Project>
